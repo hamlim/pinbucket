@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.7.0",
+    "parcel-bundler": "1.9.3"
+  },
+  "name": "pinbucket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT",
+  "repository": "git@github.com:hamlim/pinbucket.git",
+  "dependencies": {
+    "emotion": "9.2.4",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-emotion": "9.2.4",
+    "whatwg-fetch": "2.0.4"
+  },
+  "scripts": {
+    "make": "parcel --build --out-dir public/",
+    "dev": "parcel index.html"
+  }
+}
