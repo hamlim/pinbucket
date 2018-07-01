@@ -1,0 +1,33 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "@matthamlin/pinbucket-server",
+  "version": "0.0.1",
+  "description": "A simple API implementation for Pinbucket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "cors": "^2.8.4",
+    "lowdb": "^1.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "git@github.com:hamlim/pinbucket.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "graphql",
+    "lowdb"
+  ]
+}
