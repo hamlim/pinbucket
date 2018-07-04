@@ -87,7 +87,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Title>Pinbucket</Title>
+        <Title>Pinbucket 📍</Title>
         {this.state.success && (
           <Subtitle style={{ textAlign: 'center' }}>
             ✅ Successfully Submitted Location
