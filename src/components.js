@@ -1,8 +1,14 @@
 import React from 'react'
 import styled from 'react-emotion'
-import theme from './theme.js'
+import {
+  titleStyles,
+  cardStyles,
+  buttonStyles,
+  inputStyles,
+  subtitleStyles,
+} from './theme.js'
 
-export const Title = styled('h1')(theme.titleStyles)
+export const Title = styled('h1')(titleStyles)
 
 export const Container = styled('div')({
   maxWidth: '35em',
@@ -10,10 +16,10 @@ export const Container = styled('div')({
   margin: '0 auto',
 })
 
-export const Card = styled('div')(theme.cardStyles)
+export const Card = styled('div')(cardStyles)
 
-export const Button = styled('button')(theme.buttonStyles)
+export const Button = styled('button')(buttonStyles)
 
-export const Input = styled('input')(theme.inputStyles)
+export const Input = styled('input')(inputStyles)
 
-export const Subtitle = styled('h3')(theme.subtitleStyles)
+export const Subtitle = styled('h3')(subtitleStyles)

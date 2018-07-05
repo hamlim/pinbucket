@@ -19,49 +19,51 @@ export default {
       large: '2rem',
     },
   },
-  inputStyles(props) {
-    return {
-      display: 'block',
-      width: '100%',
-      padding: [props.theme.spacing.small, props.theme.spacing.small].join(' '),
-      marginBottom: props.theme.spacing.med,
-    }
-  },
-  subtitleStyles(props) {
-    return {
-      ...props.style,
-      fontSize: props.theme.font.size.med,
-      marginBottom: props.theme.spacing.med,
-    }
-  },
-  titleStyles(props) {
-    return {
-      color: props.theme.colors.salmon,
-      margin: props.theme.spacing.med,
-      textAlign: 'center',
-      fontSize: props.theme.font.size.large,
-    }
-  },
-  cardStyles(props) {
-    return {
-      color: props.theme.colors.text,
-      boxShadow: props.theme.boxShadow,
-      padding: props.theme.spacing.med,
-      margin: props.theme.spacing.med,
-      borderRadius: props.theme.radius,
-    }
-  },
-  buttonStyles(props) {
-    return {
-      padding: [props.theme.spacing.small, props.theme.spacing.med].join(' '),
-      fontSize: props.theme.font.size.med,
-      border: `solid 2px ${props.theme.colors.salmon}`,
-      color: props.theme.colors.salmon,
-      borderRadius: props.theme.radius,
-      textAlign: 'center',
-      cursor: 'pointer',
-      width: '100%',
-      background: 'white',
-    }
-  },
+}
+
+export function inputStyles(props) {
+  return {
+    display: 'block',
+    width: '100%',
+    padding: [props.theme.spacing.small, props.theme.spacing.small].join(' '),
+    marginBottom: props.theme.spacing.med,
+  }
+}
+export function subtitleStyles(props) {
+  return {
+    ...props.style,
+    fontSize: props.theme.font.size.med,
+    marginBottom: props.theme.spacing.med,
+  }
+}
+export function titleStyles(props) {
+  return {
+    color: props.theme.colors.salmon,
+    margin: props.theme.spacing.med,
+    textAlign: 'center',
+    fontSize: props.theme.font.size.large,
+  }
+}
+export function cardStyles(props) {
+  return {
+    color: props.theme.colors.text,
+    boxShadow: props.theme.boxShadow,
+    padding: props.theme.spacing.med,
+    margin: props.theme.spacing.med,
+    borderRadius: props.theme.radius,
+  }
+}
+
+export function buttonStyles(props) {
+  return {
+    padding: [props.theme.spacing.small, props.theme.spacing.med].join(' '),
+    fontSize: props.theme.font.size.med,
+    border: `solid 2px ${props.theme.colors.salmon}`,
+    color: props.theme.colors.salmon,
+    borderRadius: props.theme.radius,
+    textAlign: 'center',
+    cursor: 'pointer',
+    width: '100%',
+    background: 'white',
+  }
 }

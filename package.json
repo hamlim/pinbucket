@@ -20,10 +20,12 @@
     "react": "15.x || 16.x",
     "react-dom": "16.4.1",
     "react-emotion": "9.2.4",
+    "serve": "9.1.2",
     "whatwg-fetch": "2.0.4"
   },
   "scripts": {
-    "make": "parcel --build --out-dir public/",
-    "dev": "parcel index.html"
+    "make": "parcel build ./index.html --out-dir public/",
+    "dev": "parcel index.html",
+    "start": "serve ./public/ -s"
   }
 }
