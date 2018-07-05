@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import { postLocation } from './service.js'
 
+import { injectGlobal } from 'emotion'
+import { ThemeProvider } from 'emotion-theming'
+
 import {
   Title,
   Container,
@@ -12,6 +15,29 @@ import {
 } from './components.js'
 
 import theme from './theme.js'
+
+injectGlobal`
+html {
+  box-sizing: border-box;
+  color: ${theme.colors.text};
+  background: ${theme.colors.background};
+  font-family: 'Avenir Pro', sans-serif;
+  font-size: 20px;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+`
 
 class App extends Component {
   state = {
@@ -53,7 +79,6 @@ class App extends Component {
 
   postPostion = e => {
     e.preventDefault()
-    console.log('Heree??')
     const message = e.nativeEvent.target.message.value
     const variables = {
       latitude: this.state.position.coords.latitude,
@@ -86,67 +111,45 @@ class App extends Component {
   }
   render() {
     return (
-      <Container>
-        <Title>Pinbucket 📍</Title>
-        {this.state.success && (
-          <Subtitle style={{ textAlign: 'center' }}>
-            ✅ Successfully Submitted Location
-          </Subtitle>
-        )}
-        {this.state.err && (
-          <pre style={{ color: 'red' }}>
-            {JSON.stringify(this.state.err, null, 2)}
-          </pre>
-        )}
-        <Card>
-          {this.state.position === null && this.state.position === null ? (
-            <Button onClick={this.attemptToRequestLocation}>
-              Get Location
-            </Button>
-          ) : this.state.isRequestingPosition ? (
-            <progress min="0" max="100" value={this.state.progress} />
-          ) : this.state.position ? (
-            <form onSubmit={this.postPostion}>
-              <Subtitle>Post Location:</Subtitle>
-              <label>
-                Share an optional message:
-                <Input
-                  name="message"
-                  type="text"
-                  placeholder="Some cool message"
-                />
-              </label>
-              <Button type="submit">Share Position</Button>
-            </form>
-          ) : this.state.positionError ? (
-            this.state.positionError
-          ) : null}
-        </Card>
-        <style>
-          {`
-            html {
-              box-sizing: border-box;
-              color: ${theme.colors.text};
-              background: ${theme.colors.background};
-              font-family: 'Avenir Pro', sans-serif;
-              font-size: 20px;
-            }
-            *, *::before, *::after {
-              box-sizing: inherit;
-              padding: 0;
-              margin: 0;
-            }
-            body {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-              min-height: 100vh;
-              min-width: 100vw;
-            }
-          `}
-        </style>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Title>Pinbucket 📍</Title>
+          {this.state.success && (
+            <Subtitle style={{ textAlign: 'center' }}>
+              ✅ Successfully Submitted Location
+            </Subtitle>
+          )}
+          {this.state.err && (
+            <pre style={{ color: 'red' }}>
+              {JSON.stringify(this.state.err, null, 2)}
+            </pre>
+          )}
+          <Card>
+            {this.state.position === null && this.state.position === null ? (
+              <Button onClick={this.attemptToRequestLocation}>
+                Get Location
+              </Button>
+            ) : this.state.isRequestingPosition ? (
+              <progress min="0" max="100" value={this.state.progress} />
+            ) : this.state.position ? (
+              <form onSubmit={this.postPostion}>
+                <Subtitle>Post Location:</Subtitle>
+                <label>
+                  Share an optional message:
+                  <Input
+                    name="message"
+                    type="text"
+                    placeholder="Some cool message"
+                  />
+                </label>
+                <Button type="submit">Share Position</Button>
+              </form>
+            ) : this.state.positionError ? (
+              this.state.positionError
+            ) : null}
+          </Card>
+        </Container>
+      </ThemeProvider>
     )
   }
 }

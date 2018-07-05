@@ -19,45 +19,45 @@ export default {
       large: '2rem',
     },
   },
-  inputStyles() {
+  inputStyles(props) {
     return {
       display: 'block',
       width: '100%',
-      padding: [this.spacing.small, this.spacing.small].join(' '),
-      marginBottom: this.spacing.med,
+      padding: [props.theme.spacing.small, props.theme.spacing.small].join(' '),
+      marginBottom: props.theme.spacing.med,
     }
   },
-  subtitleStyles({ style = {} } = {}) {
+  subtitleStyles(props) {
     return {
-      ...style,
-      fontSize: this.font.size.med,
-      marginBottom: this.spacing.med,
+      ...props.style,
+      fontSize: props.theme.font.size.med,
+      marginBottom: props.theme.spacing.med,
     }
   },
-  titleStyles() {
+  titleStyles(props) {
     return {
-      color: this.colors.salmon,
-      margin: this.spacing.med,
+      color: props.theme.colors.salmon,
+      margin: props.theme.spacing.med,
       textAlign: 'center',
-      fontSize: this.font.size.large,
+      fontSize: props.theme.font.size.large,
     }
   },
-  cardStyles() {
+  cardStyles(props) {
     return {
-      color: this.colors.text,
-      boxShadow: this.boxShadow,
-      padding: this.spacing.med,
-      margin: this.spacing.med,
-      borderRadius: this.radius,
+      color: props.theme.colors.text,
+      boxShadow: props.theme.boxShadow,
+      padding: props.theme.spacing.med,
+      margin: props.theme.spacing.med,
+      borderRadius: props.theme.radius,
     }
   },
-  buttonStyles() {
+  buttonStyles(props) {
     return {
-      padding: [this.spacing.small, this.spacing.med].join(' '),
-      fontSize: this.font.size.med,
-      border: `solid 2px ${this.colors.salmon}`,
-      color: this.colors.salmon,
-      borderRadius: this.radius,
+      padding: [props.theme.spacing.small, props.theme.spacing.med].join(' '),
+      fontSize: props.theme.font.size.med,
+      border: `solid 2px ${props.theme.colors.salmon}`,
+      color: props.theme.colors.salmon,
+      borderRadius: props.theme.radius,
       textAlign: 'center',
       cursor: 'pointer',
       width: '100%',

@@ -14,7 +14,10 @@
   "repository": "git@github.com:hamlim/pinbucket.git",
   "dependencies": {
     "emotion": "9.2.4",
-    "react": "16.4.1",
+    "emotion-theming": "9.2.4",
+    "object-assign": "4.1.1",
+    "prop-types": "15.x",
+    "react": "15.x || 16.x",
     "react-dom": "16.4.1",
     "react-emotion": "9.2.4",
     "whatwg-fetch": "2.0.4"
