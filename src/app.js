@@ -66,9 +66,7 @@ class App extends Component {
           clearInterval(this.intval)
           this.setState({ positionError: error, isRequestingPosition: false })
         },
-        {
-          timeout: 5000,
-        },
+        { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true },
       )
     } else {
       this.setState({
@@ -125,7 +123,8 @@ class App extends Component {
             </pre>
           )}
           <Card>
-            {this.state.position === null && this.state.position === null ? (
+            {this.state.position === null &&
+            this.state.isRequestingPosition === false ? (
               <Button onClick={this.attemptToRequestLocation}>
                 Get Location
               </Button>
