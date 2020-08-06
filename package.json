@@ -4,7 +4,7 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
-    "parcel-bundler": "1.10.0"
+    "serve": "9.1.2"
   },
   "name": "pinbucket",
   "version": "1.0.0",
@@ -16,16 +16,17 @@
     "emotion": "9.2.4",
     "emotion-theming": "9.2.4",
     "object-assign": "4.1.1",
+    "parcel-bundler": "^1.12.4",
     "prop-types": "15.x",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-emotion": "9.2.4",
-    "serve": "9.1.2",
     "whatwg-fetch": "2.0.4"
   },
   "scripts": {
     "make": "parcel build ./index.html --out-dir public/",
     "dev": "parcel index.html",
-    "start": "serve ./public/ -s"
+    "start": "serve ./public/ -s",
+    "deploy": "vercel"
   }
 }
