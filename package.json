@@ -4,7 +4,7 @@
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "7.11.0",
     "@babel/preset-env": "7.11.0",
-    "serve": "9.1.2",
+    "serve": "10.1.2",
     "@babel/core": "^7.11.1",
     "vercel": "^19.2.0"
   },
